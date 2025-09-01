@@ -5,15 +5,15 @@ from datetime import datetime
 from gtts import gTTS
 import pyttsx3
 
-APP_TITLE = "Uzb TTS — Simplified"
+APP_TITLE = "CHTTS"
 app = Flask(__name__, static_folder="static")
 AUDIO_DIR = os.path.join(app.static_folder, "audio")
 os.makedirs(AUDIO_DIR, exist_ok=True)
 
 VOICE_OPTIONS = [
-    {"id": "gtts:tr", "label": "Google gTTS — Turkish (internet)"},
-    {"id": "pyttsx3:uz", "label": "pyttsx3 — Offline Uzbek"},
-    {"id": "pyttsx3:ru_male", "label": "pyttsx3 — Offline Russian Male"},
+    {"id": "gtts:tr", "label": "IZZY VOICE"},
+    {"id": "pyttsx3:uz", "label": "SDR VOICE"},
+    {"id": "pyttsx3:ru_male", "label": "SDR VOICE MALE"},
 ]
 
 DEFAULT_SPEED_WPM = 170  # pyttsx3 uchun rate
@@ -81,7 +81,7 @@ audio{width:100%;margin-top:12px;}
 <body>
 <div class="card">
 <h2>{{ title }}</h2>
-<textarea id="text">Assalomu alaykum! Bugun ovoz sinovi qilamiz.</textarea>
+<textarea id="text">Salom chromaticus agar buni oqiyotgan bolsang shuni bilginki sen gaysan</textarea>
 <div class="row">
 <select id="voice">
 {% for v in voices %}
@@ -90,11 +90,11 @@ audio{width:100%;margin-top:12px;}
 </select>
 <input id="rate" type="number" value="170" min="80" max="300"/>
 </div>
-<button id="makeBtn">Yaratish</button>
+<button id="makeBtn">gapirtirish</button>
 <span id="status"></span>
 <div id="playerWrap" style="display:none">
 <audio id="player" controls></audio>
-<a id="downloadLink" href="#" download>Yuklab olish</a>
+<a id="downloadLink" href="#" download>skachat qilish</a>
 </div>
 <script>
 const makeBtn=document.getElementById('makeBtn');
